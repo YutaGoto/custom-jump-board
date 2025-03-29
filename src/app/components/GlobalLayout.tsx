@@ -5,7 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "beercss/dist/cdn/beer.min.css";
 
 import "@/app/globals.css";
-import Header from "@/components/Header";
+import Header from "@/app/components/Header";
 import ThemeProvider from "@/providers/ThemeProvider";
 
 const geistSans = Geist({

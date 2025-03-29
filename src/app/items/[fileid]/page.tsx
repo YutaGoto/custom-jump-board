@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { Detail } from "@/components/pages/Detail";
+import { Detail } from "@/app/components/features/Detail";
 import type { SteamApiResponse } from "@/types/SteamApiResponse";
 
 type Props = {

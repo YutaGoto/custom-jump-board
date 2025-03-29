@@ -1,4 +1,4 @@
-import { GlobalLayout } from "@/components/GlobalLayout";
+import { GlobalLayout } from "@/app/components/GlobalLayout";
 
 export default function RootLayout({
   children,
