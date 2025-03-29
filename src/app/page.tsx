@@ -2,6 +2,9 @@ import type { SteamApiResponse } from "@/types/SteamApiResponse";
 
 import LevelCard from "@/components/LevelCard";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 export default async function Page() {
   const data = await getData();
   const filteredData = data.response.publishedfiledetails.filter((file) =>
