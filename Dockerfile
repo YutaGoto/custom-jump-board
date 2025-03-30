@@ -8,6 +8,10 @@ RUN corepack enable pnpm && pnpm install --frozen-lockfile
 
 # Stage 2: Build the application
 FROM base AS builder
+# RUN apk add --no-cache libc6-compat
+# RUN apk add sqlite-dev
+# ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.8/litestream-v0.3.8-linux-amd64-static.tar.gz /tmp/litestream.tar.gz
+# RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .

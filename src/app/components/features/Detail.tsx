@@ -1,8 +1,9 @@
 "use client";
 
-import type { SteamApiResponse } from "@/types/SteamApiResponse";
 import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
+
+import type { Level } from "@/types/Level";
 
 type FormData = {
   memo: string;
@@ -14,7 +15,7 @@ type FormData = {
 
 type Props = {
   fileid: string;
-  detailData: SteamApiResponse["response"]["publishedfiledetails"][0];
+  detailData: Level;
 };
 
 export const Detail = ({ fileid, detailData }: Props) => {
@@ -67,7 +68,7 @@ export const Detail = ({ fileid, detailData }: Props) => {
               <img
                 alt={detailData.title}
                 src={
-                  detailData.preview_url ||
+                  detailData.image ||
                   "https://community.fastly.steamstatic.com/public/images/sharedfiles/steam_workshop_default_image.png"
                 }
                 className="responsive round"
@@ -86,16 +87,16 @@ export const Detail = ({ fileid, detailData }: Props) => {
                 </a>
               </p>
               <div className="flex top-margin">
-                {detailData.tags.map((tag) => (
-                  <span key={tag.tag} className="chip">
-                    {tag.display_name}
+                {detailData.levelCategories.map((levelCategory) => (
+                  <span key={levelCategory.category?.name} className="chip">
+                    {levelCategory.category?.name}
                   </span>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        <p>{detailData.file_description}</p>
+        <p>{detailData.fileDescription}</p>
 
         <div className="grid">
           <div className="s12">

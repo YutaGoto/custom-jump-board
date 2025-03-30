@@ -8,13 +8,19 @@
     "start": "next start",
     "lint": "biome lint src",
     "format": "biome format src --write && biome check --fix src",
-    "check": "biome check src"
+    "check": "biome check src",
+    "migrate": "prisma migrate dev",
+    "migrate:reset": "prisma migrate reset",
+    "studio": "prisma studio",
+    "seed": "prisma db seed"
   },
   "dependencies": {
+    "@prisma/client": "^6.5.0",
     "add": "^2.0.6",
     "beercss": "^3.9.7",
     "material-dynamic-colors": "^1.1.2",
     "next": "15.2.4",
+    "prisma": "^6.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0"
@@ -24,6 +30,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5"
+    "typescript": "^5",
+    "ts-node": "^10.9.2"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   }
 }
