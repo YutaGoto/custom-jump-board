@@ -4,6 +4,9 @@ import { headers } from "next/headers";
 import LevelCard from "@/app/components/LevelCard";
 import type { Level } from "@/types/Level";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 export default async function Page() {
   const headersData = headers();
   const host = (await headersData).get("host");

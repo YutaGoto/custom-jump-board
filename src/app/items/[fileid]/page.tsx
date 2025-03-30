@@ -7,6 +7,9 @@ type Props = {
   params: Promise<{ fileid: string }>;
 };
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 export default async function Page({ params }: Props) {
   const { fileid } = await params;
   const data = await getData(fileid);
