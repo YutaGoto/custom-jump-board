@@ -4,7 +4,7 @@ import levels from './levels.json'
 const prisma = new PrismaClient()
 
 async function main() {
-  const filteredData = levels.response.publishedfiledetails.filter(
+  const filteredData = levels.filter(
     (file: any) => file.tags?.some((tag: any) => tag.tag === "Level")
   );
 

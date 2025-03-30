@@ -10,6 +10,7 @@
     "format": "biome format src --write && biome check --fix src",
     "check": "biome check src",
     "migrate": "prisma migrate dev",
+    "migrate:reset": "prisma migrate reset",
     "studio": "prisma studio",
     "seed": "prisma db seed"
   },
