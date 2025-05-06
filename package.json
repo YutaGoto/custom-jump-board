@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome lint src",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "pnpm run pages:build && wrangler pages dev",
+    "deploy": "pnpm run pages:build && wrangler pages deploy",
     "format": "biome format src --write && biome check --fix src",
     "check": "biome check src"
   },
@@ -21,6 +24,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@cloudflare/next-on-pages": "^1.13.12",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
