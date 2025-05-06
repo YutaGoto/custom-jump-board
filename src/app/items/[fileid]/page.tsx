@@ -7,6 +7,8 @@ type Props = {
   params: Promise<{ fileid: string }>;
 };
 
+export const runtime = "edge";
+
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
